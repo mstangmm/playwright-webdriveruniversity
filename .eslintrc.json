@@ -1,0 +1,40 @@
+{
+  "plugins": ["playwright"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "comma-spacing": ["error"],
+    "keyword-spacing": ["error"],
+    "padded-blocks": ["error", { "blocks": "never", "classes": "never" }],
+    "no-console": ["warn"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+    ],
+    "jest/no-identical-title": "off",
+    "eqeqeq": ["error"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "object-curly-spacing": ["error", "always"],
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "prefer-const": ["error"],
+    "no-var": ["error"],
+    "semi": ["warn", "never"],
+    "operator-linebreak": ["error", "before"],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "newlines-between": "always"
+      }
+    ]
+  },
+  "extends": [
+    "plugin:playwright/playwright-test",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended"
+  ],
+  "parser": "@typescript-eslint/parser"
+}
