@@ -13,7 +13,5 @@ export const dataset = {
       options: ['html', 'css', 'javascript', 'jquery']
     }],
   checkbox: ['option-1', 'option-2', 'option-3', 'option-4'],
-  radioButtons: ['green', 'blue', 'yellow', 'orange', 'purple'],
-  disabledRadioButtons: ['lettuce', 'cabbage', 'pumpkin'],
-  disabledDropdown: ['apple', 'orange', 'pear', 'grape']
+  radioButtons: ['green', 'blue', 'yellow', 'orange', 'purple']
 }

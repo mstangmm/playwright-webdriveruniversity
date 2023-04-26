@@ -18,12 +18,19 @@ for (const option of dataset.dropdowns[0].options) {
 }
 
 test('Verify checkbox selection', async () => {
-  await dcr.checkOptions(dataset.checkbox)
-  await dcr.unCheckOptions([dataset.checkbox[1], dataset.checkbox[3]])
+  await dcr.checkCheckboxOptions(dataset.checkbox)
+  await dcr.unCheckCheckboxOptions([dataset.checkbox[1], dataset.checkbox[3]])
 
   await expect(dcr.checkboxes.locator(`[value=${dataset.checkbox[0]}]`)).toBeChecked()
   await expect(dcr.checkboxes.locator(`[value=${dataset.checkbox[1]}]`)).not.toBeChecked()
   await expect(dcr.checkboxes.locator(`[value=${dataset.checkbox[2]}]`)).toBeChecked()
   await expect(dcr.checkboxes.locator(`[value=${dataset.checkbox[3]}]`)).not.toBeChecked()
 })
+
+for (const option of dataset.radioButtons) {
+  test(`Select ${option} in the radio buttons`, async() => {
+    await dcr.checkRadioOption(option)
+    await expect(dcr.radioButtons.locator(`[value=${option}]`)).toBeChecked()
+  })
+}
 

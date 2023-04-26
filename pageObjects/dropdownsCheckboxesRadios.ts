@@ -20,23 +20,25 @@ export  class DropdownsCheckboxesRadios{
     this.dropdown3= page.locator('#dropdowm-menu-3')
     this.checkboxes= page.locator('#checkboxes')
     this.radioButtons= page.locator('#radio-buttons')
-    this.disabledRadioButtons= page.locator('#radio-buttons-selected-disabled')
-    this.disabledDropdown= page.locator('#fruit-selects')
   }
 
   async openPage(){
     await this.page.goto('/Dropdown-Checkboxes-RadioButtons/index.html')
   }
 
-  async checkOptions(options: Array<string>) {
+  async checkCheckboxOptions(options: Array<string>) {
     for (const option of options) {
       await this.checkboxes.locator(`[value=${option}]`).check()
     }
   }
 
-  async unCheckOptions(options: Array<string>) {
+  async unCheckCheckboxOptions(options: Array<string>) {
     for (const option of options) {
       await this.checkboxes.locator(`[value=${option}]`).uncheck()
     }
+  }
+
+  async checkRadioOption(option: string) {
+    await this.radioButtons.locator(`[value=${option}]`).check()
   }
 }
