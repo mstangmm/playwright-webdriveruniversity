@@ -12,6 +12,7 @@
       "error",
       { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
     ],
+    "@typescript-eslint/ban-ts-comment": ["warn"],
     "jest/no-identical-title": "off",
     "eqeqeq": ["error"],
     "quotes": ["error", "single", { "avoidEscape": true }],

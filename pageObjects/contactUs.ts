@@ -21,11 +21,11 @@ export class ContactUs {
     this.successMessage = page.locator('#contact_reply h1')
   }
 
-  async openPage(){
+  async openPage() {
     await this.page.goto('/Contact-Us/contactus.html')
   }
 
-  async fillInData(firstName = '', lastName='', email='', comments='') {
+  async fillInData(firstName = '', lastName = '', email = '', comments = '') {
     if (firstName) await this.firstName.fill(firstName)
     if (lastName) await this.lastName.fill(lastName)
     if (email) await this.email.fill(email)
@@ -40,7 +40,7 @@ export class ContactUs {
     await this.resetBtn.click()
   }
 
-  async isErrorRaised(error:string):Promise<boolean>{
+  async isErrorRaised(error: string): Promise<boolean> {
     const errorMessages = await this.page.locator('body').textContent()
     return errorMessages.includes(error)
   }

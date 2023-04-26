@@ -14,7 +14,7 @@ const config: PlaywrightTestConfig = {
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
-    timeout: 5000
+    timeout: 5000,
   },
   reporter: [['html', { open: 'never' }]],
   use: {
@@ -22,7 +22,7 @@ const config: PlaywrightTestConfig = {
     headless: true,
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
-    baseURL: 'https://webdriveruniversity.com'
+    baseURL: 'https://webdriveruniversity.com',
   },
 }
 

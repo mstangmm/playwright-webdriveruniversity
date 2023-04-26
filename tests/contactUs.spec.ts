@@ -15,7 +15,7 @@ test.beforeEach(async ({ page }) => {
   await contactUs.openPage()
 })
 
-test('Reset form data', async () =>{
+test('Reset form data', async () => {
   await contactUs.fillInData(validFirstName, validLastName, validEmail, validMessage)
   await contactUs.resetForm()
   await expect(contactUs.firstName).toBeEmpty()
@@ -24,19 +24,19 @@ test('Reset form data', async () =>{
   await expect(contactUs.comments).toBeEmpty()
 })
 
-test('Not provide all required data', async() =>{
+test('Not provide all required data', async () => {
   await contactUs.fillInData(validFirstName, validLastName)
   await contactUs.submitForm()
   expect(await contactUs.isErrorRaised('all fields are required')).toBeTruthy()
 })
 
-test('Provide email address in wrong format', async() => {
+test('Provide email address in wrong format', async () => {
   await contactUs.fillInData(validFirstName, validLastName, invalidEmail, validMessage)
   await contactUs.submitForm()
   expect(await contactUs.isErrorRaised('Invalid email address')).toBeTruthy()
 })
 
-test('Provide valid data', async() => {
+test('Provide valid data', async () => {
   await contactUs.fillInData(validFirstName, validLastName, validEmail, validMessage)
   await contactUs.submitForm()
   await expect(contactUs.successMessage).toBeVisible()

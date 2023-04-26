@@ -42,9 +42,8 @@ test('Verify checkbox selection', async () => {
 })
 
 for (const option of dataset.radioButtons) {
-  test(`Select ${option} in the radio buttons`, async() => {
+  test(`Select ${option} in the radio buttons`, async () => {
     await dcr.checkRadioOption(option)
     await expect(dcr.radioButtons.locator(`[value=${option}]`)).toBeChecked()
   })
 }
-
