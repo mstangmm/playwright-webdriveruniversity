@@ -19,7 +19,7 @@ const config: PlaywrightTestConfig = {
   reporter: [['html', { open: 'never' }]],
   use: {
     browserName: 'chromium',
-    headless: false,
+    headless: true,
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
     baseURL: 'https://webdriveruniversity.com'
