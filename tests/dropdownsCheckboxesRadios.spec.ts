@@ -13,7 +13,21 @@ test.beforeEach(async ({ page }) => {
 for (const option of dataset.dropdowns[0].options) {
   test(`Select ${option} in the first dropdown`, async () => {
     await dcr.dropdown1.selectOption(option)
-    // This page is retarded and selection is not reflected in the DOM. Only way to implement would some visual check.
+    expect(await dcr.dropdown1.inputValue()).toEqual(option)
+  })
+}
+
+for (const option of dataset.dropdowns[1].options) {
+  test(`Select ${option} in the second dropdown`, async () => {
+    await dcr.dropdown2.selectOption(option)
+    expect(await dcr.dropdown2.inputValue()).toEqual(option)
+  })
+}
+
+for (const option of dataset.dropdowns[2].options) {
+  test(`Select ${option} in the third dropdown`, async () => {
+    await dcr.dropdown3.selectOption(option)
+    expect(await dcr.dropdown3.inputValue()).toEqual(option)
   })
 }
 

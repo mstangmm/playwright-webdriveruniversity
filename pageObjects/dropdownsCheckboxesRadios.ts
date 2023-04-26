@@ -3,15 +3,10 @@ import { Locator, Page } from '@playwright/test'
 export  class DropdownsCheckboxesRadios{
   readonly page: Page
   readonly dropdown1: Locator
-  readonly optionsDropdown1 = ['java', 'c#', 'python', 'sql']
   readonly dropdown2: Locator
-  readonly optionsDropdown2 = ['eclipse', 'maven', 'testng', 'junit']
   readonly dropdown3: Locator
-  readonly optionsDropdown3 = ['html', 'css', 'javascript', 'jquery']
   readonly checkboxes: Locator
   readonly radioButtons: Locator
-  readonly disabledRadioButtons: Locator
-  readonly disabledDropdown: Locator
 
   constructor(page: Page){
     this.page = page
