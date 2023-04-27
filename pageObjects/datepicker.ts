@@ -11,7 +11,7 @@ export class Datepicker {
   }
 
   async openPage() {
-    await this.page.goto('https://webdriveruniversity.com/Datepicker/index.html')
+    await this.page.goto('/Datepicker/index.html')
   }
 
   async setDate(date: Date) {
