@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint -c .eslintrc.json . --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier --write '**/*.{ts,tsx,js,jsx,json}'"
+    "format": "prettier --write '**/*.{ts,tsx,js,jsx,json}'",
+    "test": "playwright test"
   },
   "repository": {
     "type": "git",
